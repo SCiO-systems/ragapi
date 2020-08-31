@@ -1,3 +1,8 @@
+
+[![Build Status](https://travis-ci.com/AGROFIMS/ragapi.svg?branch=master)](https://travis-ci.com/AGROFIMS/ragapi)
+
+
+
 # AgAPI
 
 R client library for the Agronomy API behind AGROFIMS

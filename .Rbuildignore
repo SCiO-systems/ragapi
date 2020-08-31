@@ -3,3 +3,4 @@
 ^LICENSE\.md$
 ^documentation
 ^expdesign
+^\.travis\.yml$
