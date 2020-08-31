@@ -21,7 +21,8 @@ Imports: R6,
          curl,
          httr,
          jsonlite,
-         tibble
+         tibble,
+         dplyr
 Remotes: AGROFIMS/ragapi
 License: GPL-3
 Encoding: UTF-8

@@ -1,3 +1,11 @@
+#' @importFrom dplyr %>%
+#' @export
+dplyr::`%>%`
+
+utils::globalVariables(c("."))
+
+
+
 #' @title Replace null values
 #' @description replace null values in a list or data.frame
 #' @param .data
