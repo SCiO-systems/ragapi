@@ -1,6 +1,5 @@
 context("test as_as_data_frame_agapi")
-library(dplyr)
-library(jsonlite)
+
 
 test_that("Test as_as_data_frame_agapi with testq0 ", {
   

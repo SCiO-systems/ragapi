@@ -1,7 +1,4 @@
 context("test project agronomic experiment-site AgExpSite class")
-library(jsonlite)
-library(dplyr)
-
 
 test_that("Test agronomic exp. details version 0135", {
   

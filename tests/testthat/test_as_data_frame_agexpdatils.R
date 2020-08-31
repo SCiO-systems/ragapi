@@ -1,8 +1,5 @@
 context("test ")
 
-library(dplyr)
-library(jsonlite)
-
 test_that("Test as_data_frame_agexpdetails with testq0 ", {
   
   fp <- rprojroot::find_testthat_root_file("data","testq0-experiment_details.rds")

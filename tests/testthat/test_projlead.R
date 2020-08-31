@@ -1,9 +1,5 @@
 context("test project lead")
 
-library(jsonlite)
-library(dplyr)
-
-
 test_that("Test class project lead data version 0135", {
   
   test_v0135 <- AgProjLead$new(serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
