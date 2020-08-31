@@ -1,5 +1,5 @@
 context("test project agronomic experiment-site AgExpSite class")
-library(stringr)
+library(jsonlite)
 library(dplyr)
 
 

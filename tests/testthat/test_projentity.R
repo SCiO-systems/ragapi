@@ -1,5 +1,5 @@
 context("test project management entity")
-library(stringr)
+library(jsonlite)
 library(dplyr)
 
 test_that("Test agronomic exp. details version 0135", {

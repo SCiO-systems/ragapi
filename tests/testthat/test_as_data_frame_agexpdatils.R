@@ -1,5 +1,5 @@
 context("test ")
-library(stringr)
+
 library(dplyr)
 library(jsonlite)
 

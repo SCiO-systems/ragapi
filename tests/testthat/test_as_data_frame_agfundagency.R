@@ -1,5 +1,4 @@
 context("test as_as_data_frame_agapi")
-library(stringr)
 library(dplyr)
 library(jsonlite)
 
