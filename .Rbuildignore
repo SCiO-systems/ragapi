@@ -4,3 +4,4 @@
 ^documentation
 ^expdesign
 ^\.travis\.yml$
+^codecov\.yml$

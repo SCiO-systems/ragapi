@@ -1,6 +1,8 @@
 
 [![Build Status](https://travis-ci.com/AGROFIMS/ragapi.svg?branch=master)](https://travis-ci.com/AGROFIMS/ragapi)
 
+[![Coverage Status](https://coveralls.io/repos/github/AGROFIMS/ragapi/badge.svg?branch=master)](https://coveralls.io/github/AGROFIMS/ragapi?branch=master)
+
 
 
 # AgAPI
