@@ -1,0 +1,42 @@
+Package: ragapi
+Title: An R-implementation of the Agronomy API standard (AgAPI) used by Agronomy Fieldbook Management System (AGROFIMS) platform
+Version: 0.0.1
+Authors@R: c( 
+          person("Omar E.", "Benites-Alfaro", , email = "obacc07@gmail.com",role = c("aut","cre")),
+          person("Ivan O.", "Perez-Masias", , "ivanpe834@gmail.com", "aut"),
+          person("Peter", "Juro", , "p.juro@cgiar.org", "aut"),
+          person("Celine", "Aubert", , "c.aubert@cgiar.org", "aut"),
+          person("Medha", "Devare", , "mdevare@cgiar.org", "aut"),
+          person("International Potato Center (CIP)", role = "cph", comment = "copyright holder of the R code"),
+          person("Bioversity International (BI)", role = "cph", comment = "copyright holder of the R code"),
+          person("The International Center for Tropical Agriculture", ,role = "cph", comment = "copyright holder of the R code"),
+          person("International Food Policy Research Institute (IFPRI)", role = "cph", comment = "copyright holder of the R code")
+          )
+Maintenance: 
+Description: AgAPI stands for the Agronomic API which is an effort to enable interoperability among agronomic databases.      
+             For researchers, and people in general, ragapi provides an r-client for AgaAPI in order to consume data from multiples databases that
+             use the AgAPI standard. 
+Depends: R (>= 3.3.1)
+Imports: R6
+Remotes: AGROFIMS/ragapi
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Suggests: testthat
+Collate: 
+    'AgAPIClient.R'
+    'utils.R'
+    'checkers.R'
+    'ag_expdetails.R'
+    'ag_expsite.R'
+    'ag_funding_agency.R'
+    'ag_mobile_equivalences.R'
+    'ag_mobile_format.R'
+    'ag_personnel.R'
+    'ag_proj_lead.R'
+    'ag_project_entity.R'
+    'ag_user.R'
+    'method_dispatch.R'
+    'useful_r_trick.R'
+    'wrappers.R'

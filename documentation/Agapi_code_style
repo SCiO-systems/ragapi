@@ -1,0 +1,43 @@
+#########   CODE STYLE FOR ragapi #############
+
+### 1. Naming conventions
+
+Google prefers identifying functions with BigCamelCase to clearly distinguish them from other objects.
+
+# Good
+DoNothing <- function() {
+  return(invisible(NULL))
+}
+The names of private functions should begin with a dot. This helps communicate both the origin of the function and its intended use.
+
+# Good
+.DoNothingPrivately <- function() {
+  return(invisible(NULL))
+}
+
+### 1.1 Function structures and internals
+
+- Data-function arguments should be named as ".data"
+
+- Internal output: all the internal output should be named as "out"
+
+
+
+
+
+### 2. Use explicit returns
+
+Do not rely on R’s implicit return feature. It is better to be clear about your intent to return() an object.
+
+# Good
+AddValues <- function(x, y) {
+  return(x + y)
+}
+
+# Bad
+AddValues <- function(x, y) {
+  x + y
+}
+
+
+

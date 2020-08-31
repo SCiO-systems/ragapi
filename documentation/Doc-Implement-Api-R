@@ -1,0 +1,40 @@
+Step to create an R implementation of an API
+
+
+#1: Check internet connection
+    # example: https://github.com/mverouden/brapir/blob/master/R/brapi_canInternet.R
+#2: Check if the connection is stable
+    # example: https://github.com/mverouden/brapir/blob/master/R/brapi_checkCon.R
+
+#3: Create an object AgAPI that contains all the parameter to connect to the database
+    #https://github.com/mverouden/brapir/blob/master/R/brapi_connect.R
+
+#4: Checkers and helpers: two verbs are used for this task: has and check
+    #https://github.com/mverouden/brapir/blob/master/R/brapi_checkConArgs.R
+    
+    Los checks estan dividios en 2 partes:
+     
+     - All function must have a tryCath
+     - HAS and CHECK
+    
+    #4.1 Has internet conection
+    https://github.com/mverouden/brapir/blob/master/R/brapi_canInternet.R
+    
+
+#5: Create a main Class (OOP) for API 
+
+    #https://github.com/CIP-RIU/brapi/blob/master/R/brapiGET.R
+
+#6: Create an URL method for API-Main Class : it construct the url
+
+#7: Create an GET method for API-Main Class :  
+
+     
+#8: Authentication - token
+    https://github.com/Azure/AzureAuth/blob/master/R/AzureToken.R
+
+
+
+
+
+

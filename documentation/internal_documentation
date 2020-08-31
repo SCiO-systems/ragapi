@@ -1,0 +1,32 @@
+# Documentation of R-internals of AGROFIMS code
+
+
+
+The aim of document is provide details of how is the new structure of agrofims r-code. 
+We inspire on the amazing package dplyr which hand out multiples types of table and 
+data structures for data munging in R.
+* https://github.com/tidyverse/dplyr/blob/0f7b6abadc0b703a1ee5873d1a823ca26587ad0c/R/data-mask.R
+* https://github.com/tidyverse/dplyr/blob/761b976d9080f1243ff359bc5f08d9a43b12df6c/R/filter.R
+* https://github.com/tidyverse/dplyr/blob/10a4d36d3dcf4ee5b8f0fbf83b0680d38fa4fe53/R/generics.R
+
+The following features will be available :
+
+- Create a super class for AGROFIMS that includes:
+-- class (subclass) for experiment details aka agExpDetails(experiment name, experiment id, funding agency,etc)
+-- class (subclass) for personnel details aka agPersonnel (name, orcid, etc)
+-- class (subclass) for sites details aka agSites (latitude, longitud, country, etc)
+-- class (subclass) for crop details aka agCropInfo (crop name, cropping type, crop variety, )
+-- class (subclass) for crop measurements/ traits aka agTrait (see https://docs.google.com/spreadsheets/d/1FthwUVFJeokvDWqMm1OuC3N8nCtUNGdVlq9Nob05jWM/edit#gid=0)
+
+-- class (subclass) for management practices 
+    -- create sub classes for: residue management, 
+
+
+
+
+
+#Experiment details
+
+- create an agrofims object
+- upload mapping table in the database and expose via API  /equivalences/
+- 

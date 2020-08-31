@@ -1,0 +1,27 @@
+- Tiny evaluation
+https://edwinth.github.io/blog/dplyr-recipes/
+
+
+- Implementacion de una clase en R6 con documentación y helpers
+https://github.com/alan-turing-institute/distr6/blob/master/R/Distribution.R
+
+
+- Implemtacionde clases en R6 con metodos por separados con "set"
+-https://journal.r-project.org/archive/2017/RJ-2017-028/RJ-2017-028.pdf
+
+
+- Helpers in R6 
+https://github.com/alan-turing-institute/distr6/blob/master/R/helpers.R
+
+- BRAPI GET
+-https://github.com/CIP-RIU/brapi/blob/master/R/brapiGET.R
+
+
+- R API CLIENT FOR NETHERLAND PLANTS
+
+https://github.com/ropensci/nbaR/blob/be487c3ba6c472276d53d14d7eeafd35b6da046f/R/Response.r
+https://github.com/ropensci/nbaR/blob/320c7ae2d29ad00faa558754e7d33adeb719c1fb/R/ApiClient.r
+https://github.com/ropensci/nbaR/blob/320c7ae2d29ad00faa558754e7d33adeb719c1fb/R/SpecimenClient.r
+
+- Wrapper for R6 classes and objects
+https://github.com/ropensci/nbaR/blob/master/R/SpecimenClient-wrapper.r

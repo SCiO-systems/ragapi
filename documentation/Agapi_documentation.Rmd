@@ -1,0 +1,51 @@
+---
+title: "AgAPI Vignette"
+author: "Omar E. Benites Alfaro"
+date: "27/7/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Manual
+
+The aim of this manual is to provide a guide for new users whom wants to use the R-implementation of AgAPI, the agronomic API for AGROFIMS and any agronomic database platform.
+
+
+## Prerequisites
+
+Before using any functionality, we should install and load `ragapi` library.
+
+```{r}
+install.packages("devtools")
+library(devtools)
+```
+
+## Installation of the API package
+
+```{r}
+devtools::install_github("AGROFIMS/ragapi")
+```
+
+
+## Using the package
+
+```{r}
+library(ragapi)
+```
+
+
+### AGAPI Client in R
+
+
+```{r}
+expdetail_v002 <- AgExpDetails$new(serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
+                                   version ="/002/r", endPoint= "/experiment/get.php")
+```
+
+
+
+
+
