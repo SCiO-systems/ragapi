@@ -30,12 +30,15 @@ AgExpSite <- R6::R6Class(
   
   classname = "AgExpSite",
   inherit = AgAPIClient,
+  # private = list(
+  #   super$endPoint = "/exp-site/getAll?id="
+  # ),
   
   public = list(
     
     initialize = function(user=NULL, password=NULL, authentication=NULL, token=NULL, user_agent=NULL,
                           serverURL, version ){ #, endPoint) {
-      super$initialize(user, password, authentication, token,user_agent, serverURL, version)#, endPoint)
+      super$initialize(user, password, authentication, token, user_agent, serverURL, version)#, endPoint)
     },
     
     ag_get_expsite_studyId = function(studyDbId, format, ...){}
@@ -83,10 +86,7 @@ AgExpSite$set(which = "public", name = "ag_get_expsite_studyId",  function(study
   } else if(format=="list"){
     out <- jsonlite::fromJSON(cont,simplifyVector = "vector")
   } else if(format=="data.frame") {
-    cont <- jsonlite::fromJSON(cont)
-    
-    out <- replace_null(cont,"") %>% as.data.frame(stringsAsFactors=FALSE) %>% tibble::rownames_to_column()  
-    
+    out <- as_data_frame_agapi(cont)
   }
   return(out)
 },

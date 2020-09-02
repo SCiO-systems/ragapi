@@ -28,8 +28,7 @@ AgAPIClient <- R6::R6Class(
   classname = "AgAPIClient",
 
   private = list(
-    tableName = NULL,
-    endPoint = "tableName/method.php"#,#temporary values
+     endPoint = "tableName/method.php"#,#temporary values
   ),
   
   public = list(
@@ -102,7 +101,7 @@ AgAPIClient$set(which = "public", name = "print", function(...) {
   cat("\tserverURL: ", paste0("<", self$serverURL, ">"), "\n")
   cat("\tversion: ", paste0("<", self$version, ">"), "\n")
   #cat("\tendPoint: ", paste0("<", private$endPoint, ">"), "\n")
-  cat("\tbaseURL: ", paste0(self$serverURL, self$version, private$tableName, private$endPoint), "\n") 
+  #cat("\tbaseURL: ", paste0(self$serverURL, self$version, private$endPoint), "\n") 
   
 }, overwrite = TRUE)
 
