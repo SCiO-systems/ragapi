@@ -8,6 +8,9 @@ test_that("Test agronomic exp. details version 0135", {
   testthat::expect_equal(object = nrow(out_test),expected = 2)
 
 })
+
+
+
 # 
 # test_that("Test ag_expdetails-Test-all-empty",{
 #   
