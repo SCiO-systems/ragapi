@@ -64,7 +64,6 @@ as_data_frame_agapi <-  function(.data, tranpose = FALSE){
     }else if(nrow(cont)>=1){
       out <- cont
     }    
-    
   }
   out
 }

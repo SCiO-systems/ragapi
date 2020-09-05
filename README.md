@@ -5,7 +5,7 @@
 
 
 
-# AgAPI
+# ragapi
 
 R client library for the Agronomy API behind AGROFIMS
 

@@ -41,7 +41,8 @@ AgExpSite <- R6::R6Class(
       super$initialize(user, password, authentication, token, user_agent, serverURL, version)#, endPoint)
     },
     
-    ag_get_expsite_studyId = function(studyDbId, format, ...){}
+    ag_get_expsite_studyId = function(studyDbId, format, ...){},
+    ag_get_sitedesc_studyId = function(studyDbId, format, ...){}
   )
 )
 
@@ -91,6 +92,78 @@ AgExpSite$set(which = "public", name = "ag_get_expsite_studyId",  function(study
   return(out)
 },
 overwrite = TRUE)   
+
+#######
+
+
+#' @title  Get all experiment-site description data from an agronomic study by its agronomical study database ID
+#' @description retrieve data from databases with AgAPI standard
+#' @field ... argument inherents by AgaAPIClient
+#' @field studyDbID character agronomical study id
+#' @field format support in three data structures: json, list and data.frames
+#' @importFrom R6 R6Class
+#' @importFrom httr content
+#' @importFrom jsonlite fromJSON
+#' @importFrom tibble rownames_to_column
+#' @author Omar Benites
+#' @export 
+#' 
+AgExpSite$set(which = "public", name = "ag_get_sitedesc_studyId", 
+                                function( studyDbId =NULL,
+                                          format=c("json","list","data.frame"),
+                                          ... ){  
+                                        
+  
+  #Create objet AgExpSite -------------------------------------------
+  obj_expsite <- AgExpSite$new(serverURL = self$serverURL ,
+                              version = self$version )
+  #Get experiment sites studies -------------------------------
+  dt_expsite <- obj_expsite$ag_get_expsite_studyId(studyDbId= studyDbId, format="data.frame")
+  expsite_id <- dt_expsite$expSiteId
+
+  super$endPoint <- "/exp-site/get?id="
+  url  <- paste0(self$serverURL, self$version, super$endPoint) #everything before the URL
+  print(url)
+  
+  #GET parameters for retrieving data ----------------------------
+  #headerParams <- character()
+  queryParams <- vector(mode="list",length = 1)
+  
+  #Allocate response objects from GET method ----------------------
+  res <- out <-  vector(mode="list", length = length(expsite_id))
+  
+  #Iterate over exp_site_id to extract experiment descript from each site in the study
+  for(i in 1:length(expsite_id)){
+    queryParams <- list(id = expsite_id[i])  
+    res[[i]] <- self$call_api(
+      url = url, 
+      method = "GET",
+      queryParams = queryParams, #, #TODO
+      #headerParams = headerParams, #TODO
+      #body = body,
+      ...
+    )    
+    cont <- httr::content(res[[i]], as = "text", encoding = "UTF-8")
+    #Object structure
+    if(format=="json"){
+      out[[i]] <-  cont
+    } else if(format=="list"){
+      out[[i]] <- jsonlite::fromJSON(cont,simplifyVector = "vector")
+    } else if(format=="data.frame") {
+      out[[i]] <- as_data_frame_agexpdetails(cont)
+    }
+    
+  }
+  
+  return(out)
+  
+},
+overwrite = TRUE)   
+
+
+
+
+
 
 
 

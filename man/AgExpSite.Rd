@@ -71,6 +71,7 @@ http://research.cip.cgiar.org/agrofims/api/dev/}
 \itemize{
 \item \href{#method-new}{\code{AgExpSite$new()}}
 \item \href{#method-ag_get_expsite_studyId}{\code{AgExpSite$ag_get_expsite_studyId()}}
+\item \href{#method-ag_get_sitedesc_studyId}{\code{AgExpSite$ag_get_sitedesc_studyId()}}
 \item \href{#method-clone}{\code{AgExpSite$clone()}}
 }
 }
@@ -105,6 +106,19 @@ http://research.cip.cgiar.org/agrofims/api/dev/}
 \subsection{Method \code{ag_get_expsite_studyId()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{AgExpSite$ag_get_expsite_studyId(
+  studyDbId = NULL,
+  format = c("json", "list", "data.frame"),
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ag_get_sitedesc_studyId"></a>}}
+\if{latex}{\out{\hypertarget{method-ag_get_sitedesc_studyId}{}}}
+\subsection{Method \code{ag_get_sitedesc_studyId()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AgExpSite$ag_get_sitedesc_studyId(
   studyDbId = NULL,
   format = c("json", "list", "data.frame"),
   ...
