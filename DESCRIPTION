@@ -35,6 +35,7 @@ Collate:
     'AgAPIClient.R'
     'utils.R'
     'checkers.R'
+    'ag_crop_measurements.R'
     'ag_expdetails.R'
     'ag_expsite.R'
     'ag_funding_agency.R'
