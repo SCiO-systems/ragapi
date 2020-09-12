@@ -44,7 +44,8 @@ AgExpSite <- R6::R6Class(
     
     ag_get_expsite_studyId = function(studyDbId, format, ...){},
     ag_get_sitedesc_studyId = function(studyDbId, format, ...){},
-    ag_get_cropsite_studyId  = function(studyDbId, format, ...){}
+    ag_get_cropsite_studyId  = function(studyDbId, format, ...){},
+    ag_get_sitedesc_expsiteId = function(expsiteDbId, format, ...){}
   )
 )
 
@@ -162,9 +163,62 @@ AgExpSite$set(which = "public", name = "ag_get_sitedesc_studyId",
 },
 overwrite = TRUE)   
 
+############################
+
+#' @title  Get experiment site description by site ID (expsiteId)
+#' @description retrieve data from databases with AgAPI standard
+#' @field ... argument inherents by AgaAPIClient
+#' @field expsiteDbId character experiment site ID
+#' @field format support in three data structures: json, list and data.frames
+#' @importFrom R6 R6Class
+#' @importFrom httr content
+#' @importFrom jsonlite fromJSON
+#' @importFrom tibble rownames_to_column
+#' @author Omar Benites
+#' @export 
+#' 
+AgExpSite$set(which = "public", name = "ag_get_sitedesc_expsiteId", 
+              function( expsiteDbId =NULL,
+                        format=c("json","list","data.frame"),
+                        ... ){  
+                
+                super$endPoint <- "/exp-site/get?id="
+                url  <- paste0(self$serverURL, self$version, super$endPoint) #everything before the URL
+                print(url)
+                
+                #GET parameters for retrieving data ----------------------------
+                #headerParams <- character()
+                queryParams <- list(id = expsiteDbId)  
+                
+                #Iterate over exp_site_id to extract experiment descript from each site in the study
+                 
+                  res <- self$call_api(
+                    url = url, 
+                    method = "GET",
+                    queryParams = queryParams, #, #TODO
+                    #headerParams = headerParams, #TODO
+                    #body = body,
+                    ...
+                  )    
+                  cont <- httr::content(res, as = "text", encoding = "UTF-8")
+                  #Object structure
+                  if(format=="json"){
+                    out <-  cont
+                  } else if(format=="list"){
+                    out <- jsonlite::fromJSON(cont,simplifyVector = "vector")
+                  } else if(format=="data.frame") {
+                    out <- as_data_frame_agexpdetails(cont)
+                  }
+                
+                return(out)
+                
+              },
+overwrite = TRUE)   
+
+
+
 
 # TODO:
-# ag_get_site_expsiteId
 #
 #############################################################################################
 
