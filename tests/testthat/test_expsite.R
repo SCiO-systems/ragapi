@@ -1,7 +1,7 @@
 context("test project agronomic experiment-site AgExpSite class and methods")
 
 
-test_that("Test get exp-site description ver. 0135 with 3 sites", {
+test_that("Test get exp-site description ver. 0135 with 3 sites by studyId", {
   
   test_v0135 <- AgExpSite$new(serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
                               version ="/0135/r")
@@ -9,7 +9,6 @@ test_that("Test get exp-site description ver. 0135 with 3 sites", {
   testthat::expect_equal(object = length(out_test),expected = 3)
   
 })
-
 
 test_that("Test get exp-site description by expsiteDbId ver. 0135 -Afganistan ", {
   

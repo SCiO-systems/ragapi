@@ -100,6 +100,7 @@ AgAPIClient$set(which = "public", name = "print", function(...) {
   cat("Fields:\n")
   cat("\tserverURL: ", paste0("<", self$serverURL, ">"), "\n")
   cat("\tversion: ", paste0("<", self$version, ">"), "\n")
+  cat("call URL: ", paste0(self$serverURL,self$version))
   #cat("\tendPoint: ", paste0("<", private$endPoint, ">"), "\n")
   #cat("\tbaseURL: ", paste0(self$serverURL, self$version, private$endPoint), "\n") 
   
