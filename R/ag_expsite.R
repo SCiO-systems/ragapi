@@ -330,7 +330,7 @@ AgExpSite$set(which = "public", name = "ag_get_cropsite_expsiteId",
                 } else if(format=="list"){
                   out <- jsonlite::fromJSON(cont,simplifyVector = "vector")
                 } else if(format=="data.frame") {
-                  out <- as_data_frame_agexpdetails(cont)
+                  out <- as_data_frame_agapi(cont)
                 }
                 
                 return(out)

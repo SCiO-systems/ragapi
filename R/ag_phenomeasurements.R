@@ -1,11 +1,11 @@
 #' @include checkers.R utils.R
 #' 
-#' Crop Measurements Class
+#' Phenology Measurements Class
 #' 
-#' @description Class to represent crop measurements data from AgroFIMS. It inherents from AgAPI client class 
+#' @description Class to represent phenology measurements data from AgroFIMS. It inherents from AgAPI client class 
 #' all the basic parameters and methods.
 #'
-#' @title AgCropMea
+#' @title AgPhenoMea
 #'
 #' @docType class
 #'
@@ -26,9 +26,9 @@
 #' 
 #' @export
 #' 
-AgCropMea <- R6::R6Class(
+AgPhenoMea <- R6::R6Class(
   
-  classname = "AgCropMea",
+  classname = "AgPhenoMea",
   inherit = AgAPIClient,
   # private = list(
   #   super$endPoint = "/exp-site/getAll?id="
@@ -41,19 +41,19 @@ AgCropMea <- R6::R6Class(
       super$initialize(user, password, authentication, token, user_agent, serverURL, version)#, endPoint)
     },
     
-    #ag_get_cropmea_studyId = function(studyDbId, format, ...){},
-    ag_get_cropmea_sitecropId = function(siteCropDbId, format, ...){} ,
-    ag_get_cropmea_expsiteId = function(expsiteDbId, format, ...){}
+    #ag_get_phenomea_studyId = function(studyDbId, format, ...){},
+    ag_get_phenomea_sitecropId = function(siteCropDbId, format, ...){} ,
+    ag_get_phenomea_expsiteId = function(expsiteDbId, format, ...){}
     
   )
 )
 
 #############################################
 
-#' @title  Get all crop measurements based on the experiment site ID
-#' @description retrieve crop measurements data from AGROFIMS database. AGROFIMS use the AgAPI standard in order to get and post data.
+#' @title  Get all phenology measurements based on the experiment site ID
+#' @description retrieve phenology measurements data from AGROFIMS database. AGROFIMS use the AgAPI standard in order to get and post data.
 #' @field ... argument inherents by AgaAPIClient
-#' @field siteCropDbId character siteCropId its the id of the crop evaluated in one site and experiment
+#' @field siteCropDbId character siteCropId its the id of the phenology evaluated in one site and experiment
 #' @field format support in three data structures: json, list and data.frames
 #' @importFrom R6 R6Class
 #' @importFrom httr content
@@ -62,12 +62,12 @@ AgCropMea <- R6::R6Class(
 #' @author Omar Benites
 #' @export 
 #' 
-AgCropMea$set(which = "public", name = "ag_get_cropmea_sitecropId", 
+AgPhenoMea$set(which = "public", name = "ag_get_phenomea_sitecropId", 
               function( siteCropDbId =NULL,
                         format=c("json","list","data.frame"),
                         ... ){  
                 
-                super$endPoint <- "/crop-measurement/getAll?id="
+                super$endPoint <- "/crop-phenology/getAll?id="
                 url  <- paste0(self$serverURL, self$version, super$endPoint) #everything before the URL
                 print(url)
                 
@@ -99,7 +99,7 @@ AgCropMea$set(which = "public", name = "ag_get_cropmea_sitecropId",
                 
               },
               
-overwrite = TRUE)   
+              overwrite = TRUE)   
 
 
 ##TODO: agregar un metodo para sacar los measurementes de un sitio-fieldbook
@@ -107,8 +107,8 @@ overwrite = TRUE)
 
 #############################################
 
-#' @title  Get all crop measurements based on the agronomic experiment site database ID
-#' @description retrieve crop measurements data from AGROFIMS database with AgAPI standard
+#' @title  Get all phenology measurements based on the agronomic experiment site database ID
+#' @description retrieve phenology measurements data from AGROFIMS database with AgAPI standard
 #' @field ... argument inherents by AgaAPIClient
 #' @field expsiteDbId character agronomical study id
 #' @field format support in three data structures: json, list and data.frames
@@ -119,7 +119,7 @@ overwrite = TRUE)
 #' @author Omar Benites
 #' @export 
 #' 
-AgCropMea$set(which = "public", name = "ag_get_cropmea_expsiteId", 
+AgPhenoMea$set(which = "public", name = "ag_get_phenomea_expsiteId", 
               function(expsiteDbId =NULL,
                        format=c("json","list","data.frame"),
                        ... ){  
@@ -133,7 +133,7 @@ AgCropMea$set(which = "public", name = "ag_get_cropmea_expsiteId",
                 sitecrop_id <- dt_expsite$siteCropId
                 print(sitecrop_id)
                 
-                super$endPoint <- "/crop-measurement/getAll?id="
+                super$endPoint <- "/crop-phenology/getAll?id="
                 url  <- paste0(self$serverURL, self$version, super$endPoint) #everything before the URL
                 print(url)
                 
@@ -144,7 +144,7 @@ AgCropMea$set(which = "public", name = "ag_get_cropmea_expsiteId",
                 #Allocate response objects from GET method ----------------------
                 res <- out <-  vector(mode="list", length = length(sitecrop_id))
                 
-                #Iterate over exp_site_id to extract crop information by site from each site in the study
+                #Iterate over exp_site_id to extract phenology information by site from each site in the study
                 for(i in 1:length(sitecrop_id)){
                   queryParams <- list(id = sitecrop_id[i])  
                   res[[i]] <- self$call_api(

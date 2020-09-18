@@ -10,6 +10,18 @@ test_that("Test get cropping site information by expsiteDbId ver. 0212 -Afganist
   
 })
 
+test_that("Test get cropping site information by expsiteDbId ver. 0212 -Afganistan ", {
+  
+  test_v0135 <- AgExpSite$new(serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
+                              version ="/0212/r")
+  out_test <- test_v0135$ag_get_cropsite_expsiteId(expsiteDbId= 21, format="data.frame")
+  testthat::expect_equal(object = nrow(out_test),expected = 15)
+  
+})
+
+
+
+
 test_that("Test get cropping site information by expsiteDbId ver. 0135 -Afganistan ", {
   
   test_v0135 <- AgExpSite$new(serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",

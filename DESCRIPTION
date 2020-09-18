@@ -33,15 +33,16 @@ Suggests:
     covr
 Collate: 
     'AgAPIClient.R'
-    'ag_crop_measurements.R'
     'utils.R'
     'checkers.R'
+    'ag_crop_measurements.R'
     'ag_expdetails.R'
     'ag_expsite.R'
     'ag_funding_agency.R'
     'ag_mobile_equivalences.R'
     'ag_mobile_format.R'
     'ag_personnel.R'
+    'ag_phenomeasurements.R'
     'ag_proj_lead.R'
     'ag_project_entity.R'
     'ag_soil_measurements.R'
