@@ -5,7 +5,7 @@
 #' @description Subclass for representing agronomic project lead data. It inherents from AgAPI client class 
 #' all the basic parameters and methods.
 #'
-#' @title AgProjEntity
+#' @title AgProjLead
 #'
 #' @docType class
 #'

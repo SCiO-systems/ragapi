@@ -67,7 +67,7 @@ test_that("Test ag_get_cropsite_expsiteId by expsiteDbId=22-v0135-Peru", {
   test_v0135 <- AgExpSite$new(serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
                               version ="/0135/r")
   out_test <- test_v0135$ag_get_cropsite_expsiteId(expsiteDbId= 22, format="data.frame")
-  testthat::expect_equal(object = nrow(out_test),expected = 15)
+  testthat::expect_equal(object = nrow(out_test),expected = 2)
   
 })
 

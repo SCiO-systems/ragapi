@@ -1,7 +1,7 @@
 context("test project agronomic crop-site information AgExpSite class")
 
 
-test_that("Test get cropping site information by expsiteDbId ver. 0212 -Afganistan ", {
+test_that("Test get site description information by expsiteDbId ver. 0212 -Afganistan ", {
   
   test_v0135 <- AgExpSite$new(serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
                               version ="/0212/r")
@@ -15,7 +15,7 @@ test_that("Test get cropping site information by expsiteDbId ver. 0212 -Afganist
   test_v0135 <- AgExpSite$new(serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
                               version ="/0212/r")
   out_test <- test_v0135$ag_get_cropsite_expsiteId(expsiteDbId= 21, format="data.frame")
-  testthat::expect_equal(object = nrow(out_test),expected = 15)
+  testthat::expect_equal(object = nrow(out_test),expected = 1)
   
 })
 
