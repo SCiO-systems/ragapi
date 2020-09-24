@@ -33,7 +33,6 @@ Suggests:
     rmarkdown
 Collate: 
     'AgAPIClient.R'
-    'Wrappers.R'
     'utils.R'
     'checkers.R'
     'ag_crop_measurements.R'
@@ -50,5 +49,6 @@ Collate:
     'ag_user.R'
     'ag_weather_variables.R'
     'method_dispatch.R'
+    'method_wrappers.r'
     'useful_r_trick.R'
 VignetteBuilder: knitr
