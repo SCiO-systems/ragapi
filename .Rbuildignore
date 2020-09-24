@@ -6,3 +6,8 @@
 ^\.travis\.yml$
 ^codecov\.yml$
 ^appveyor\.yml$
+\.git
+\.Rhistory
+\.Rcheck
+\.tar\.gz$
+out
