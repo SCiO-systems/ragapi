@@ -61,7 +61,7 @@ log_calculator <- function(x){
 #' 
 
 check_list_null <- function(x){
-  
+  a1 <- NULL
   sapply(a1, is.null)
   
   

@@ -22,7 +22,6 @@ Imports: R6,
          jsonlite,
          tibble,
          dplyr
-Remotes: AGROFIMS/ragapi
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
