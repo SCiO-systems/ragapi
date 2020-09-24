@@ -12,7 +12,6 @@ Authors@R: c(
           person("The International Center for Tropical Agriculture", ,role = "cph", comment = "copyright holder of the R code"),
           person("International Food Policy Research Institute (IFPRI)", role = "cph", comment = "copyright holder of the R code")
           )
-Maintenance: 
 Description: AgAPI stands for the Agronomic API which is an effort to enable interoperability among agronomic databases.      
              For researchers, and people in general, ragapi provides an r-client for AgaAPI in order to consume data from multiples databases that
              use the AgAPI standard. 
@@ -30,9 +29,12 @@ LazyData: true
 RoxygenNote: 7.1.1
 Suggests: 
     testthat,
-    covr
+    covr,
+    knitr,
+    rmarkdown
 Collate: 
     'AgAPIClient.R'
+    'Wrappers.R'
     'utils.R'
     'checkers.R'
     'ag_crop_measurements.R'
@@ -50,4 +52,4 @@ Collate:
     'ag_weather_variables.R'
     'method_dispatch.R'
     'useful_r_trick.R'
-    'wrappers.R'
+VignetteBuilder: knitr

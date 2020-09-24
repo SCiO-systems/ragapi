@@ -3,7 +3,7 @@
 \docType{class}
 \name{AgProjLead}
 \alias{AgProjLead}
-\title{AgProjEntity}
+\title{AgProjLead}
 \format{
 R6 class
 }

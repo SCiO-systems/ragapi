@@ -1,0 +1,60 @@
+---
+title: "intro_ragapi"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{intro_ragapi}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## The ragapi package
+
+In this introductory tutorial, we explains how to use the `ragapi` package, an R-implementation of the Agronomic API(AGAPI) running behind AGROFIMS.
+
+```{r setup}
+library(ragapi)
+```
+
+- Get experimental details from experiment by studyDbId
+
+```{r}
+out <- ag_get_expdetails_studyId(studyDbId = 21, 
+                                  format = "data.frame",
+                                  serverURL = "https://research.cip.cgiar.org/agrofims/api/dev", 
+                                  version ="/0212/r")
+```
+
+- Get funding agency information by studyDbId
+
+```{r}
+out <- ag_get_fundagency_studyId(studyDbId = 28, 
+                                  format = "data.frame",
+                                  serverURL = "https://research.cip.cgiar.org/agrofims/api/dev", 
+                                  version ="/0212/r")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -22,7 +22,7 @@ replace_null <-  function(.data, replacement = ""){
 #' @title Convert HTTP responses to AgExpDetails class data
 #' @description The GET method retrieve a list of values (list data structure), some of them with NULL values,
 #' should be converted to data frame structure.
-#' @param .data
+#' @param .data data
 #' @export
 #' 
 as_data_frame_agexpdetails <-  function(.data){
@@ -31,8 +31,8 @@ as_data_frame_agexpdetails <-  function(.data){
   out <- replace_null(cont,"") %>% 
                       as.data.frame(stringsAsFactors=FALSE) %>% 
                       tibble::rownames_to_column()
-  #cont <- jsonlite::fromJSON(json) 
-  #out <- sapply(.data, function(x) ifelse(is.null(x), replacement, x))
+  colnames(out) <- c("DbAttribute","Value")
+  out
 }
 
 
