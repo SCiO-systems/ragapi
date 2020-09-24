@@ -6,6 +6,9 @@
 \usage{
 as_data_frame_agexpdetails(.data)
 }
+\arguments{
+\item{.data}{data}
+}
 \description{
 The GET method retrieve a list of values (list data structure), some of them with NULL values,
 should be converted to data frame structure.
