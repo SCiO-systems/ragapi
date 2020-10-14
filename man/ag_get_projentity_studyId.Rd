@@ -8,7 +8,7 @@ ag_get_projentity_studyId(
   studyDbId = NULL,
   format = c("json", "list", "data.frame"),
   serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
-  version = "/0212/r",
+  version = "/0233/r",
   ...
 )
 }
