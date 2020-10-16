@@ -76,7 +76,7 @@ AgSoilMea$set(which = "public", name = "ag_get_soil_studyId",
                    expsite_id <- dt_expsite$expSiteId
                    print(expsite_id)
                    
-                   super$endPoint <- "/soil/getAll?id="
+                   super$endPoint <- "/site-soil/getAll?id="
                    url  <- paste0(self$serverURL, self$version, super$endPoint) #everything before the URL
                    print(url)
                    
@@ -135,7 +135,7 @@ AgSoilMea$set(which = "public", name = "ag_get_soil_expsiteId",
                            format=c("json","list","data.frame"),
                            ... ){  
                    
-                   super$endPoint <- "/soil/getAll?id="
+                   super$endPoint <- "/site-soil/getAll?id="
                    url  <- paste0(self$serverURL, self$version, super$endPoint) #everything before the URL
                    print(url)
                    

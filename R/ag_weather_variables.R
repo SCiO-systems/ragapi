@@ -76,7 +76,7 @@ AgWeatherMea$set(which = "public", name = "ag_get_weather_studyId",
                 expsite_id <- dt_expsite$expSiteId
                 print(expsite_id)
                 
-                super$endPoint <- "/weather/getAll?id="
+                super$endPoint <- "/site-weather/getAll?id="
                 url  <- paste0(self$serverURL, self$version, super$endPoint) #everything before the URL
                 print(url)
                 
@@ -135,7 +135,7 @@ AgWeatherMea$set(which = "public", name = "ag_get_weather_expsiteId",
                         format=c("json","list","data.frame"),
                         ... ){  
                 
-                super$endPoint <- "/weather/getAll?id="
+                super$endPoint <- "/site-weather/getAll?id="
                 url  <- paste0(self$serverURL, self$version, super$endPoint) #everything before the URL
                 print(url)
                 

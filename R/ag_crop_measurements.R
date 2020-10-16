@@ -125,47 +125,74 @@ AgCropMea$set(which = "public", name = "ag_get_cropmea_expsiteId",
                        ... ){  
                 
                 #Create objet AgExpSite -------------------------------------------
-                obj_expsite <- AgExpSite$new(serverURL = self$serverURL ,
-                                             version = self$version )
-                print(obj_expsite)
-                #Get experiment sites studies -------------------------------
-                dt_expsite <- obj_expsite$ag_get_cropsite_expsiteId(expsiteDbId= expsiteDbId, format="data.frame")
-                sitecrop_id <- dt_expsite$siteCropId
-                print(sitecrop_id)
-                
+                # obj_expsite <- AgExpSite$new(serverURL = self$serverURL ,
+                #                              version = self$version)
+                # print(obj_expsite)
+                # #Get experiment sites studies -------------------------------
+                # dt_expsite <- obj_expsite$ag_get_cropsite_expsiteId(expsiteDbId= expsiteDbId, format="data.frame", 
+                #                                                     serverURL = self$serverURL, version = self$version)
+                # sitecrop_id <- dt_expsite$siteCropId
+                # print(sitecrop_id)
+                # 
                 super$endPoint <- "/crop-measurement/getAll?id="
                 url  <- paste0(self$serverURL, self$version, super$endPoint) #everything before the URL
                 print(url)
                 
-                #GET parameters for retrieving data ----------------------------
-                #headerParams <- character()
-                queryParams <- vector(mode="list",length = 1)
+                headerParams <- character()
                 
-                #Allocate response objects from GET method ----------------------
-                res <- out <-  vector(mode="list", length = length(sitecrop_id))
+                queryParams <- list(id = expsiteDbId) #everythig after the ? in the URL 
                 
-                #Iterate over exp_site_id to extract crop information by site from each site in the study
-                for(i in 1:length(sitecrop_id)){
-                  queryParams <- list(id = sitecrop_id[i])  
-                  res[[i]] <- self$call_api(
-                    url = url, 
-                    method = "GET",
-                    queryParams = queryParams, #, #TODO
-                    #headerParams = headerParams, #TODO
-                    #body = body,
-                    ...
-                  )    
-                  cont <- httr::content(res[[i]], as = "text", encoding = "UTF-8")
-                  #Object structure
-                  if(format=="json"){
-                    out[[i]] <-  cont
-                  } else if(format=="list"){
-                    out[[i]] <- jsonlite::fromJSON(cont,simplifyVector = "vector")
-                  } else if(format=="data.frame") {
-                    out[[i]] <- as_data_frame_agapi(cont)
-                  }
+                res <- self$call_api(
+                  url = url, 
+                  method = "GET",
+                  queryParams = queryParams, #, #TODO
+                  #headerParams = headerParams, #TODO
+                  #body = body,
+                  ...
+                )
+                cont <- httr::content(res, as = "text", encoding = "UTF-8")
+                
+                if(format=="json"){
+                  out <-  cont
+                } else if(format=="list"){
+                  out <- jsonlite::prettify(txt = cont) #jsonlite::fromJSON(cont)
+                } else if(format=="data.frame") {
+                  out <- as_data_frame_agapi(cont)
+                  #cont <- jsonlite::fromJSON(cont)
+                  #out <- replace_null(cont,"") %>% as.data.frame(stringsAsFactors=FALSE) %>% tibble::rownames_to_column()
                 }
                 return(out)
+                
+                
+                #GET parameters for retrieving data ----------------------------
+                #headerParams <- character()
+                # queryParams <- vector(mode="list",length = 1)
+                # 
+                # #Allocate response objects from GET method ----------------------
+                # res <- out <-  vector(mode="list", length = length(sitecrop_id))
+                # 
+                # #Iterate over exp_site_id to extract crop information by site from each site in the study
+                # for(i in 1:length(sitecrop_id)){
+                #   queryParams <- list(id = sitecrop_id[i])  
+                #   res[[i]] <- self$call_api(
+                #     url = url, 
+                #     method = "GET",
+                #     queryParams = queryParams, #, #TODO
+                #     #headerParams = headerParams, #TODO
+                #     #body = body,
+                #     ...
+                #   )    
+                #   cont <- httr::content(res[[i]], as = "text", encoding = "UTF-8")
+                #   #Object structure
+                #   if(format=="json"){
+                #     out[[i]] <-  cont
+                #   } else if(format=="list"){
+                #     out[[i]] <- jsonlite::fromJSON(cont,simplifyVector = "vector")
+                #   } else if(format=="data.frame") {
+                #     out[[i]] <- as_data_frame_agapi(cont)
+                #   }
+                # }
+                # return(out)
                 
               },
 overwrite = TRUE)   
