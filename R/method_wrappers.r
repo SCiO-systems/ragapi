@@ -48,10 +48,10 @@ ag_get_expdetails_studyId <- function(studyDbId =NULL,
 #' 
 #' @examples \dontrun{
 #' #Get funding agencies information by studyId (agronomic study ID)
-#' out <- ag_get_fundagency_studyId(studyDbId = 6, 
+#' out <- ag_get_fundagency_studyId(studyDbId = 11,
 #'                                  format = "data.frame",
-#'                                  serverURL = "https://research.cip.cgiar.org/agrofims/api/dev", 
-#'                                  version ="/0212/r")
+#'                                  serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
+#'                                  version ="/0253/r")
 #' }
 #' @export
 #' 
@@ -59,7 +59,7 @@ ag_get_expdetails_studyId <- function(studyDbId =NULL,
 ag_get_fundagency_studyId <- function(studyDbId =NULL,
                                       format=c("json","list","data.frame"),
                                       serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
-                                      version ="/0212/r",
+                                      version ="/0253/r",
                                       ...){
   
   format <- match.arg(format)
@@ -67,7 +67,7 @@ ag_get_fundagency_studyId <- function(studyDbId =NULL,
   out <- sc$ag_get_fundagency_studyId(studyDbId = studyDbId,
                                       format = format,
                                       ...
-  )
+                                      )
   return(out)
 }
 
@@ -365,7 +365,7 @@ ag_get_edsfactors_expsiteId <-  function(expsiteDbId=NULL,
 #' 
 #' @description wrapper function for \code{objetc$ag_get_cropmea_expsiteId } method from \code{AgCropMea} objects. 
 #' @param ... inherents arguments from AgAPIClient class and AgCropMea
-#' @param expsiteId character experiment site ID from AgroFIMS database
+#' @param expsiteDbId character experiment site ID from AgroFIMS database
 #' @param format data format: json, list and data.frame
 #' @param serverURL URL of the agrofims server
 #' @param version version of the call. By default version \code{0212}.
@@ -375,14 +375,14 @@ ag_get_edsfactors_expsiteId <-  function(expsiteDbId=NULL,
 #' @examples \dontrun{
 #' Get crop measurements variables by expsiteDbId (experiment site ID)
 #' library(ragapi)
-#' out <- ag_get_cropmea_expsiteId(expsiteId = 6,
+#' out <- ag_get_cropmea_expsiteId(expsiteDbId = 6,
 #'                                  format = "data.frame",
 #'                                  serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
 #'                                  version ="/0248/r")
 #' }
 #' @export
 #
-ag_get_cropmea_expsiteId <- function(expsiteId =NULL,
+ag_get_cropmea_expsiteId <- function(expsiteDbId =NULL,
                                      format=c("json","list","data.frame"),
                                      serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
                                      version ="/0233/r",
@@ -391,9 +391,46 @@ ag_get_cropmea_expsiteId <- function(expsiteId =NULL,
   #sc: instance class (objet)
   sc <- AgCropMea$new(serverURL = serverURL,
                        version = version)
-  out <- sc$ag_get_cropmea_expsiteId(expsiteDbId = expsiteId, format=format,...)
+  out <- sc$ag_get_cropmea_expsiteId(expsiteDbId = expsiteDbId, format=format,...)
   
 }
+### Management practices 
+
+# Man Prac
+#' Wrapper for ag_get_manprac_expsiteId  method
+#' 
+#' @description wrapper function for \code{objetc$ag_get_manprac_expsiteId} method from \code{AgWeatherMea} objects. 
+#' @param ... inherents arguments from AgAPIClient class and AgWeatherMea
+#' @param expsiteDbId character experiment site ID from AgroFIMS database
+#' @param format data format: json, list and data.frame
+#' @param serverURL URL of the agrofims server
+#' @param version version of the call. By default version \code{0253}.
+#' @param ... additional parameters 
+#' @author Omar Benites
+#' 
+#' @examples \dontrun{
+#' Get management practices variables by expsiteDbId (experiment site ID)
+#' out <- ag_get_manprac_expsiteId(expsiteDbId = 8,
+#'                                  format = "data.frame",
+#'                                  serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
+#'                                  version ="/0253/r")
+#' }
+#' @export
+#
+ag_get_manprac_expsiteId <- function(expsiteDbId=NULL,
+                                     format=c("json","list","data.frame"),
+                                     serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
+                                     version ="/0253/r",
+                                     ...){
+  
+  #sc: instance class (objet)
+  sc <- AgManPrac$new(serverURL = serverURL,
+                         version = version )
+  out <- sc$ag_get_manprac_expsiteId(expsiteDbId = expsiteDbId, format=format)
+  
+}
+
+
 
 
 ###########
@@ -403,7 +440,7 @@ ag_get_cropmea_expsiteId <- function(expsiteId =NULL,
 #' 
 #' @description wrapper function for \code{objetc$ag_get_phenomea_expsiteId } method from \code{AgPhenoMea} objects. 
 #' @param ... inherents arguments from AgAPIClient class and AgPhenoMea
-#' @param expsiteId character experiment site ID from AgroFIMS database
+#' @param expsiteDbId character experiment site ID from AgroFIMS database
 #' @param format data format: json, list and data.frame
 #' @param serverURL URL of the agrofims server
 #' @param version version of the call. By default version \code{0212}.
@@ -420,7 +457,7 @@ ag_get_cropmea_expsiteId <- function(expsiteId =NULL,
 #' }
 #' @export
 #
-ag_get_phenomea_expsiteId <- function(expsiteId =NULL,
+ag_get_phenomea_expsiteId <- function(expsiteDbId =NULL,
                                      format=c("json","list","data.frame"),
                                      serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
                                      version ="/0248/r",
@@ -429,7 +466,7 @@ ag_get_phenomea_expsiteId <- function(expsiteId =NULL,
   #sc: instance class (objet)
   sc <- AgPhenoMea$new(serverURL = serverURL,
                       version = version)
-  out <- sc$ag_get_phenomea_expsiteId(expsiteDbId = expsiteId, format=format,...)
+  out <- sc$ag_get_phenomea_expsiteId(expsiteDbId = expsiteDbId, format=format,...)
   
 }
 
@@ -441,7 +478,7 @@ ag_get_phenomea_expsiteId <- function(expsiteId =NULL,
 #' 
 #' @description wrapper function for \code{objetc$ag_get_soil_expsiteId } method from \code{AgSoilMea} objects. 
 #' @param ... inherents arguments from AgAPIClient class and AgSoilMea
-#' @param expsiteId character experiment site ID from AgroFIMS database
+#' @param expsiteDbId character experiment site ID from AgroFIMS database
 #' @param format data format: json, list and data.frame
 #' @param serverURL URL of the agrofims server
 #' @param version version of the call. By default version \code{0212}.
@@ -451,14 +488,14 @@ ag_get_phenomea_expsiteId <- function(expsiteId =NULL,
 #' @examples \dontrun{
 #' Get soil variables by expsiteDbId (experiment site ID)
 #' library(ragapi)
-#' out <- ag_get_soil_expsiteId(expsiteId = 6, 
+#' out <- ag_get_soil_expsiteId(expsiteDbId = 6, 
 #'                                  format = "data.frame",
 #'                                  serverURL = "https://research.cip.cgiar.org/agrofims/api/dev", 
 #'                                  version ="/0233/r")
 #' }
 #' @export
 #
-ag_get_soil_expsiteId <- function(expsiteId =NULL,
+ag_get_soil_expsiteId <- function(expsiteDbId =NULL,
                                      format=c("json","list","data.frame"),
                                      serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
                                      version ="/0233/r",
@@ -467,7 +504,7 @@ ag_get_soil_expsiteId <- function(expsiteId =NULL,
   #sc: instance class (objet)
   sc <- AgSoilMea$new(serverURL = serverURL,
                          version = version )
-  out <- sc$ag_get_soil_expsiteId(expsiteDbId = expsiteId, format=format)
+  out <- sc$ag_get_soil_expsiteId(expsiteDbId = expsiteDbId, format=format)
   
 }
 
@@ -477,7 +514,7 @@ ag_get_soil_expsiteId <- function(expsiteId =NULL,
 #' 
 #' @description wrapper function for \code{objetc$ag_get_weather_expsiteId } method from \code{AgWeatherMea} objects. 
 #' @param ... inherents arguments from AgAPIClient class and AgWeatherMea
-#' @param expsiteId character experiment site ID from AgroFIMS database
+#' @param expsiteDbId character experiment site ID from AgroFIMS database
 #' @param format data format: json, list and data.frame
 #' @param serverURL URL of the agrofims server
 #' @param version version of the call. By default version \code{0212}.
@@ -493,7 +530,7 @@ ag_get_soil_expsiteId <- function(expsiteId =NULL,
 #' }
 #' @export
 #
-ag_get_weather_expsiteId <- function(expsiteId =NULL,
+ag_get_weather_expsiteId <- function(expsiteDbId =NULL,
                          format=c("json","list","data.frame"),
                          serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
                          version ="/0233/r",
@@ -502,7 +539,7 @@ ag_get_weather_expsiteId <- function(expsiteId =NULL,
   #sc: instance class (objet)
   sc <- AgWeatherMea$new(serverURL = serverURL,
                          version = version )
-  out <- sc$ag_get_weather_expsiteId(expsiteDbId = expsiteId, format=format)
+  out <- sc$ag_get_weather_expsiteId(expsiteDbId = expsiteDbId, format=format)
 
 }
 

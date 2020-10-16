@@ -5,7 +5,7 @@
 \title{Wrapper for ag_get_phenomea_expsiteId method from AgPhenoMea class}
 \usage{
 ag_get_phenomea_expsiteId(
-  expsiteId = NULL,
+  expsiteDbId = NULL,
   format = c("json", "list", "data.frame"),
   serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
   version = "/0248/r",
@@ -13,7 +13,7 @@ ag_get_phenomea_expsiteId(
 )
 }
 \arguments{
-\item{expsiteId}{character experiment site ID from AgroFIMS database}
+\item{expsiteDbId}{character experiment site ID from AgroFIMS database}
 
 \item{format}{data format: json, list and data.frame}
 

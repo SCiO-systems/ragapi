@@ -5,7 +5,7 @@
 \title{Wrapper for ag_get_soil_expsiteId  method}
 \usage{
 ag_get_soil_expsiteId(
-  expsiteId = NULL,
+  expsiteDbId = NULL,
   format = c("json", "list", "data.frame"),
   serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
   version = "/0233/r",
@@ -13,7 +13,7 @@ ag_get_soil_expsiteId(
 )
 }
 \arguments{
-\item{expsiteId}{character experiment site ID from AgroFIMS database}
+\item{expsiteDbId}{character experiment site ID from AgroFIMS database}
 
 \item{format}{data format: json, list and data.frame}
 
@@ -30,7 +30,7 @@ wrapper function for \code{objetc$ag_get_soil_expsiteId } method from \code{AgSo
 \dontrun{
 Get soil variables by expsiteDbId (experiment site ID)
 library(ragapi)
-out <- ag_get_soil_expsiteId(expsiteId = 6, 
+out <- ag_get_soil_expsiteId(expsiteDbId = 6, 
                                  format = "data.frame",
                                  serverURL = "https://research.cip.cgiar.org/agrofims/api/dev", 
                                  version ="/0233/r")

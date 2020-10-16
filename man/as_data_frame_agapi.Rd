@@ -11,6 +11,9 @@ as_data_frame_agapi(.data, tranpose = FALSE)
 
 \item{...}{additional arguments.}
 }
+\value{
+data.frame of the response.
+}
 \description{
 Coerce AgExpDetails responses to data.frame
 }

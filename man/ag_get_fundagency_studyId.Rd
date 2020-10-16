@@ -8,7 +8,7 @@ ag_get_fundagency_studyId(
   studyDbId = NULL,
   format = c("json", "list", "data.frame"),
   serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
-  version = "/0212/r",
+  version = "/0253/r",
   ...
 )
 }
@@ -29,10 +29,10 @@ wrapper function for \code{objetc$ag_get_fundagency_studyId} method from \code{A
 \examples{
 \dontrun{
 #Get funding agencies information by studyId (agronomic study ID)
-out <- ag_get_fundagency_studyId(studyDbId = 6, 
+out <- ag_get_fundagency_studyId(studyDbId = 11,
                                  format = "data.frame",
-                                 serverURL = "https://research.cip.cgiar.org/agrofims/api/dev", 
-                                 version ="/0212/r")
+                                 serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
+                                 version ="/0253/r")
 }
 }
 \author{

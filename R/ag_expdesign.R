@@ -62,7 +62,7 @@ AgExpDesign <- R6::R6Class(
 #' @importFrom jsonlite fromJSON
 #' @importFrom tibble rownames_to_column
 #' @author Omar Benites
-#' @example \dontrun{
+#' @examples \dontrun{
 #' sc <- AgExpDesign$new(serverURL = "https://research.cip.cgiar.org/agrofims/api/dev", version = "/0233/r")
 #' out <- sc$ag_get_edsinfo_expsiteId(expsiteDbId = 5,
 #'                                       format = "data.frame")
@@ -119,7 +119,7 @@ overwrite = TRUE)
 #' @importFrom jsonlite fromJSON
 #' @importFrom tibble rownames_to_column
 #' @author Omar Benites
-#' @example \dontrun{
+#' @examples \dontrun{
 #' sc <- AgExpDesign$new(serverURL = "https://research.cip.cgiar.org/agrofims/api/dev", version = "/0233/r")
 #' out <- sc$ag_get_edsfactors_expsiteId(expsiteDbId = 5,
 #'                                       format = "data.frame")

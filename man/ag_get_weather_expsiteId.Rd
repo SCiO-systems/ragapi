@@ -5,7 +5,7 @@
 \title{Wrapper for ag_get_weather_expsiteId  method}
 \usage{
 ag_get_weather_expsiteId(
-  expsiteId = NULL,
+  expsiteDbId = NULL,
   format = c("json", "list", "data.frame"),
   serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
   version = "/0233/r",
@@ -13,7 +13,7 @@ ag_get_weather_expsiteId(
 )
 }
 \arguments{
-\item{expsiteId}{character experiment site ID from AgroFIMS database}
+\item{expsiteDbId}{character experiment site ID from AgroFIMS database}
 
 \item{format}{data format: json, list and data.frame}
 

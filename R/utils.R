@@ -45,7 +45,7 @@ as_data_frame_agexpdetails <-  function(.data){
 #'
 #' @seealso \code{\link{AgExpDetails}}
 #'
-#' @returnd data.frame of the response.
+#' @return data.frame of the response.
 #'
 #' @export
 #'  
@@ -79,7 +79,7 @@ as_data_frame_agapi <-  function(.data, tranpose = FALSE){
 #' @description  
 #' @references See reference in https://github.com/ropensci/ckanr/blob/c5d5bc32be76d3b6447807adc1501803aeeaefa3/R/zzz.R
 
-err_handler <- function(x) {
+error_handler <- function(x) {
   if (x$status_code > 201) {
     obj <- try({
       err <- jsonlite::fromJSON(x$parse("UTF-8"))$error
