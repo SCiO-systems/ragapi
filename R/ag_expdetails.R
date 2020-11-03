@@ -62,7 +62,7 @@ AgExpDetails$set(which = "public", name = "ag_get_expdetails_studyId",  function
   format <- match.arg(format)
   super$endPoint <- "/experiment/get?id="
   url  <- paste0(self$serverURL, self$version, super$endPoint) #everything before the URL
-  print(url)
+ 
   
   headerParams <- character()
   

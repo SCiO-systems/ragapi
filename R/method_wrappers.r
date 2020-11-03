@@ -431,6 +431,45 @@ ag_get_manprac_expsiteId <- function(expsiteDbId=NULL,
 }
 
 
+# Fertilizer measurements ###
+
+#' Wrapper for ag_get_fertmea_siteId  method
+#' 
+#' @description wrapper function for \code{objetc$ag_get_fertmea_expsiteId} method from \code{AgFertilizerMea} objects. 
+#' @param ... inherents arguments from AgAPIClient class and AgFertilizerMea
+#' @param expsiteDbId character experiment site ID from AgroFIMS database
+#' @param format data format: json, list and data.frame
+#' @param serverURL URL of the agrofims server
+#' @param version version of the call. By default version \code{0253}.
+#' @param ... additional parameters 
+#' @author Omar Benites
+#' 
+#' @examples \dontrun{
+#' Get fertilizer measurements, nutrients and products,  by expsiteDbId (experiment site ID)
+#' out <- ag_get_fertmea_expsiteId(expsiteDbId = 7,
+#'                                  format = "data.frame",
+#'                                  serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
+#'                                  version ="/0291/r")
+#' }
+#' @export
+#
+ag_get_fertmea_expsiteId <- function(expsiteDbId=NULL,
+                                     format=c("json","list","data.frame"),
+                                     serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
+                                     version ="/0291/r",
+                                     ...){
+  
+  #sc: instance class (objet)
+  sc <- AgFertilizerMea$new(serverURL = serverURL,
+                            version = version
+                            )
+  out <- sc$ag_get_fertmea_expsiteId(expsiteDbId = expsiteDbId, format=format)
+  
+}
+
+
+
+
 
 
 ###########

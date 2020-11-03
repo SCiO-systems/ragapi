@@ -39,6 +39,7 @@ Collate:
     'ag_expdesign.R'
     'ag_expdetails.R'
     'ag_expsite.R'
+    'ag_fertilizer_measurements.R'
     'ag_funding_agency.R'
     'ag_manpractices.R'
     'ag_mobile_equivalences.R'

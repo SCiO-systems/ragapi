@@ -65,6 +65,7 @@ AgFundingAgency$set(which = "public", "ag_get_fundagency_studyId",  function(stu
   super$endPoint <- "/fund-agency/getAll?id="
   url  <- paste0(self$serverURL, self$version, super$endPoint) #everything before the URL
   headerParams <- character() #headerParams
+  print(url)
   
   queryParams <- list(id = studyDbId) #everythig after the ? in the URL
   
