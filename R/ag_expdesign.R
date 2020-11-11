@@ -41,9 +41,9 @@ AgExpDesign <- R6::R6Class(
       super$initialize(user, password, authentication, token, user_agent, serverURL, version)#, endPoint)
     },
     
-    ag_get_edsexp_expsiteId = function(expsiteDbId, format, ...){},
-    ag_get_edsfactor_expsiteId = function(expsiteDbId, format, ...){},
-    ag_get_edsfert_expsiteId = function(expsiteDbId, format, ...){}
+    ag_get_edsinfo_expsiteId = function(expsiteDbId, format, ...){},
+    ag_get_edsfactors_expsiteId = function(expsiteDbId, format, ...){}
+    
   )
 )
 

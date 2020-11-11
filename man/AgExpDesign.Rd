@@ -70,9 +70,6 @@ http://research.cip.cgiar.org/agrofims/api/dev/}
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-new}{\code{AgExpDesign$new()}}
-\item \href{#method-ag_get_edsexp_expsiteId}{\code{AgExpDesign$ag_get_edsexp_expsiteId()}}
-\item \href{#method-ag_get_edsfactor_expsiteId}{\code{AgExpDesign$ag_get_edsfactor_expsiteId()}}
-\item \href{#method-ag_get_edsfert_expsiteId}{\code{AgExpDesign$ag_get_edsfert_expsiteId()}}
 \item \href{#method-ag_get_edsinfo_expsiteId}{\code{AgExpDesign$ag_get_edsinfo_expsiteId()}}
 \item \href{#method-ag_get_edsfactors_expsiteId}{\code{AgExpDesign$ag_get_edsfactors_expsiteId()}}
 \item \href{#method-clone}{\code{AgExpDesign$clone()}}
@@ -100,33 +97,6 @@ http://research.cip.cgiar.org/agrofims/api/dev/}
   serverURL,
   version
 )}\if{html}{\out{</div>}}
-}
-
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ag_get_edsexp_expsiteId"></a>}}
-\if{latex}{\out{\hypertarget{method-ag_get_edsexp_expsiteId}{}}}
-\subsection{Method \code{ag_get_edsexp_expsiteId()}}{
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{AgExpDesign$ag_get_edsexp_expsiteId(expsiteDbId, format, ...)}\if{html}{\out{</div>}}
-}
-
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ag_get_edsfactor_expsiteId"></a>}}
-\if{latex}{\out{\hypertarget{method-ag_get_edsfactor_expsiteId}{}}}
-\subsection{Method \code{ag_get_edsfactor_expsiteId()}}{
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{AgExpDesign$ag_get_edsfactor_expsiteId(expsiteDbId, format, ...)}\if{html}{\out{</div>}}
-}
-
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ag_get_edsfert_expsiteId"></a>}}
-\if{latex}{\out{\hypertarget{method-ag_get_edsfert_expsiteId}{}}}
-\subsection{Method \code{ag_get_edsfert_expsiteId()}}{
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{AgExpDesign$ag_get_edsfert_expsiteId(expsiteDbId, format, ...)}\if{html}{\out{</div>}}
 }
 
 }
