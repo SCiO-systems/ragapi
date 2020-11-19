@@ -54,12 +54,12 @@ log_calculator <- function(x){
   )    
 }
 
-
+#' Check null values in a list
+#' 
 #' @param x list or list of lists 
 #' @author Omar Benites
 #' @description Check if there are nulls in the a list or list of lists 
 #' 
-
 check_list_null <- function(x){
   a1 <- NULL
   sapply(a1, is.null)

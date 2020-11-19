@@ -72,6 +72,7 @@ http://research.cip.cgiar.org/agrofims/api/dev/}
 \item \href{#method-new}{\code{AgExpDesign$new()}}
 \item \href{#method-ag_get_edsinfo_expsiteId}{\code{AgExpDesign$ag_get_edsinfo_expsiteId()}}
 \item \href{#method-ag_get_edsfactors_expsiteId}{\code{AgExpDesign$ag_get_edsfactors_expsiteId()}}
+\item \href{#method-ag_get_edsfert_expsiteId}{\code{AgExpDesign$ag_get_edsfert_expsiteId()}}
 \item \href{#method-clone}{\code{AgExpDesign$clone()}}
 }
 }
@@ -119,6 +120,19 @@ http://research.cip.cgiar.org/agrofims/api/dev/}
 \subsection{Method \code{ag_get_edsfactors_expsiteId()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{AgExpDesign$ag_get_edsfactors_expsiteId(
+  expsiteDbId = NULL,
+  format = c("json", "list", "data.frame"),
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ag_get_edsfert_expsiteId"></a>}}
+\if{latex}{\out{\hypertarget{method-ag_get_edsfert_expsiteId}{}}}
+\subsection{Method \code{ag_get_edsfert_expsiteId()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AgExpDesign$ag_get_edsfert_expsiteId(
   expsiteDbId = NULL,
   format = c("json", "list", "data.frame"),
   ...

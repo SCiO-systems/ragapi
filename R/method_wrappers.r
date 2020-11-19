@@ -185,9 +185,7 @@ ag_get_personnel_studyId <- function(studyDbId =NULL,
 }
 
 
-
-
-#' Wrapper for experiment-site (field book) GET method
+#' Wrapper for experiment-site or field book GET method
 #' 
 #' @description wrapper function for \code{objetc$ag_get_expsite_studyId} method from \code{AgProjEntity} objects. 
 #' @param ... inherents arguments from AgAPIClient class and AgSite
@@ -325,6 +323,9 @@ ag_get_edsinfo_expsiteId <- function(expsiteDbId=NULL,
   
 }
 
+
+
+
 #' Wrapper for ag_get_edsfactors_expsiteId method
 #' 
 #' @description wrapper function for \code{objetc$ag_get_edsfactors_expsiteId} method from \code{AgProjEntity} objects. 
@@ -358,6 +359,45 @@ ag_get_edsfactors_expsiteId <-  function(expsiteDbId=NULL,
                                         format = format)
   
 }
+
+
+
+#' Wrapper for ag_get_edsfert_expsiteId method
+#' 
+#' @description wrapper function for \code{objetc$ag_get_edsfert_expsiteId} method from \code{AgProjEntity} objects. 
+#' @param ... inherents arguments from AgAPIClient class and AgExpDesign
+#' @param expsiteDbId character experiment site ID from AgroFIMS database
+#' @param format data format: json, list and data.frame
+#' @param serverURL URL of the agrofims server
+#' @param version version of the call. By default version \code{0212}.
+#' @param ... additional parameters 
+#' @author Omar Benites
+#' 
+#' @examples \dontrun{
+#' Get fertilizer information by expsiteDbId (experiment site ID)
+#' out <- ag_get_edsfert_expsiteId(expsiteDbId = 25, 
+#'                                  format = "data.frame",
+#'                                  serverURL = "https://research.cip.cgiar.org/agrofims/api/dev", 
+#'                                  version ="/0291/r")
+#' }
+#' @export
+#' 
+
+ag_get_edsfert_expsiteId <-  function(expsiteDbId=NULL, 
+                                         format=c("json","list","data.frame"),
+                                         serverURL = "https://research.cip.cgiar.org/agrofims/api/dev",
+                                         version ="/0233/r",
+                                         ...){
+  
+  format <- match.arg(format)
+  sc <- AgExpDesign$new(serverURL = serverURL, version = version)
+  out <- sc$ag_get_edsfert_expsiteId(expsiteDbId = expsiteDbId, 
+                                        format = format)
+  
+}
+
+
+
 
 
 # Crop measurement
