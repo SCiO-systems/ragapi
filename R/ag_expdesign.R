@@ -208,6 +208,8 @@ AgExpDesign$set(which = "public", name = "ag_get_edsfert_expsiteId",
                       #headerParams <- character()
                       queryParams <- list(id = expsiteDbId)  
                       
+                      print(queryParams)
+                      
                       #Iterate over exp_site_id to extract experiment descript from each site in the study
                       
                       res <- self$call_api(
@@ -219,6 +221,7 @@ AgExpDesign$set(which = "public", name = "ag_get_edsfert_expsiteId",
                         ...
                       )    
                       cont <- httr::content(res, as = "text", encoding = "UTF-8")
+                      print(cont)
                       #Object structure
                       if(format=="json"){
                         out <-  cont
